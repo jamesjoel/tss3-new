@@ -1,0 +1,16 @@
+body{
+    background-color: #405060;
+}
+
+p b{
+    background-color: red;
+}
+div{
+    background-color: white;
+    height: 300px;
+    width: 300px;
+}
+
+div h1{
+    color : yellow
+}
