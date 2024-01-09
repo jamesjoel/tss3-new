@@ -1,0 +1,227 @@
+body{
+    background-color: #cecece;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.header{
+    height: 120px;
+    width: 100%;
+    background-color: #1A1A1A;
+}
+.menu{
+    height: 40px;
+    width: 100%;
+    background-color: #EF0A2B;
+}
+.content{
+    height: 1200px;
+    width: 100%;
+    /* background-color: blue; */
+}
+.company{
+    height: 150px;
+    width: 100%;
+    background-color: #EF0A2B;
+}
+.footer{
+    height: 250px;
+    width: 100%;
+    background-color: #1A1A1A;
+}
+.bottom-footer{
+    height: 100px;
+    width: 100%;
+    background-color: #000;
+}
+.viewport{
+    width: 970px;
+    margin: 0 auto;
+}
+.logo{
+    width: 300px;
+    height: 120px;
+    /* background-color: yellow; */
+    float: left;
+}
+.search{
+    width: 670px;
+    height: 120px;
+    /* background-color: green; */
+    float: left;
+}
+.logo h1{
+    color: #fff;
+    margin-top: 35px;
+    font-size: 45px;
+}
+.logo h1 span{
+    color: #EF0A2B;
+}
+.search-top{
+    height: 40px;
+    width: 100%;
+    /* background-color: yellow; */
+}
+.search-bottom{
+    height: 80px;
+    width: 100%;
+    text-align: right;
+    /* background-color: pink; */
+}
+.search-top ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.search-top ul li{
+    float: right;
+}
+.search-top ul li a{
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    margin: 11px 25px;
+}
+.search-text{
+    width: 350px;
+    height: 35px;
+    margin: 10px 0 10px 10px;
+    border:none;
+}
+.search-btn{
+    background-color: #EF0A2B;
+    font-size: 18px;
+    color: #fff;
+    padding: 7px;
+    border : none;
+    border-radius: 5px;
+}
+.menu ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.menu ul li{
+    float: right;
+}
+.menu ul li a{
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    padding: 11px 35px;
+    font-weight: bold;
+}
+.menu ul li a:hover{
+    background-color: #1A1A1A;
+}
+.left-content{
+    height: 1200px;
+    width: 240px;
+    /* background-color: blue; */
+    float: left;
+    margin-right: 10px;
+}
+.right-content{
+    float: left;
+    height: 1200px;
+    width: 710px;
+    margin-left: 10px;
+    /* background-color: yellow; */
+}
+.category{
+    background-color: #fff;
+    border-top: 5px solid #CECECE;
+}
+.category ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.category ul li a{
+    display: block;
+    color : #000;
+    text-decoration: none;
+    padding: 20px;
+    border-bottom: 1px solid #878787;
+    font-weight: bold;
+}
+.category ul li a:hover{
+    background-color: #EF0A2B;
+    color: #fff;
+}
+.right-content div{
+    width: 100%;
+}
+.slider-top{
+    height: 350px;
+    background-color: #FFCB75;
+}
+.slider-bottom{
+    height: 100px;
+    background-color: #EF0A2B;
+}
+.new-product{
+    height: 250px;
+    background-color: #fff;
+    margin-top: 20px;
+}
+.latest-product{
+    height: 250px;
+    background-color: #fff;
+    margin-top: 20px;
+}
+.slider-top-left{
+    width: 350px !important;
+    height: 350px;
+    text-align: center;
+    /* background-color: green; */
+}
+.slider-top-left h1{
+    text-align: center;
+    padding-top: 70px;
+    color: #2C346E;
+    text-transform: uppercase;
+}
+.slider-top-left h2{
+    text-align: center;
+    font-size: 50px;
+    color: #fff;
+    text-shadow: 3px 3px 5px #000;
+}
+.slider-top-left a{
+    color: #000;
+    border : 2px solid #000;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: bold;
+    
+}
+.slider-top-left a:hover{
+    background-color: #EF0A2B;
+    color: #fff;
+}
+.new-product h3, .latest-product h3{
+    padding: 10px;
+    border-bottom: 1px solid #878787;
+}
+.product-box{
+    width: 157px !important;
+    margin: 0px 10px;
+    height: 188px;
+    /* background-color: blue; */
+    float: left;
+}
+.product-box img{
+    width: 100%;
+    height: 150px;
+}
+.product-box p{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    text-align: center;
+}
+.product-box p del{
+    color: #878787;
+}
