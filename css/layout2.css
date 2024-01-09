@@ -1,0 +1,123 @@
+body{
+    background-color: #252B42;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.header{
+    height: 100px;
+    width: 100%;
+    /* background-color: red; */
+}
+.viewport{
+    margin: 0 auto;
+    width: 970px;
+
+    
+}
+.logo{
+    height: 100px;
+    /* background-color: green; */
+    width: 200px;
+    float: left;
+}
+.menu{
+    float: left;
+    height: 100px;
+    /* background-color: yellow; */
+    width: 500px;
+}
+.login{
+    float: left;
+    height: 100px;
+    /* background-color: blue; */
+    width: 270px;
+}
+.logo h1{
+    text-align: center;
+    color: #FFF;
+}
+.menu ul{
+    margin: 0 0 0 40px;
+    padding: 0;
+    list-style: none;
+}
+.menu ul li{
+    float: left;
+    
+}
+.menu ul li a{
+    color : #fff;
+    text-decoration: none;
+    display: inline-block;
+    margin: 33px 10px;
+}
+.login ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.login ul li{
+    float: left;
+}
+.login ul li a{
+    color: #fff;
+    text-decoration: none;
+    margin: 13px 0px;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 8px;
+}
+.login ul li a:hover{
+    background-color: #23A6F0;
+}
+.slider{
+    height: 500px;
+    width: 100%;
+    text-align: center;
+    /* background-color: red; */
+}
+.slider h4{
+    text-align: center;
+    margin-top: 100px;
+    color: #23A6F0;
+}
+.slider h1{
+    text-align: center;
+    font-size: 50px;
+    color: #fff;
+}
+.slider p{
+    text-align: center;
+    color: #FFF;
+    font-size: 20px;
+}
+.slider a{
+    display: inline-block;
+    color: #23A6F0;
+    border : 1px solid #23A6F0;
+    border-radius: 8px;
+    text-decoration: none;
+    padding: 20px 30px;
+    margin: 10px;
+}
+.slider a:hover{
+    background-color: #23A6F0;
+    color: #fff;
+}
+
+.content{
+    height: 700px;
+    width: 100%;
+    /* background-color: red; */
+}
+.courses{
+    width: 280px;
+    height: 300px;
+    background-color: #fff;
+    float: left;
+    margin: 20px;
+}
+.courses:hover{
+    background-color: #23A6F0;
+}
