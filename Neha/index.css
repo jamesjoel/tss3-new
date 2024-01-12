@@ -1,0 +1,179 @@
+body ,h1,p{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .viewport{
+        margin:0 auto;
+        width: 1000px;
+    }
+
+ .header{
+    width:100%;
+    height: 60px;
+    background-color: #14ae7c;
+     }   
+
+     .menu{
+        width:650px;
+        height:80px;
+        float:right;
+        font-size: 17px;
+     }
+
+     .menu ul{
+        padding:0;
+        margin:0;
+        list-style: none;
+     }
+    .menu ul li{
+        float:left;
+    }
+
+    .menu ul li a{
+        color:#fff;
+        display: inline-block;
+        text-decoration: none;
+        padding:10px 0px 10px 92px;
+        margin:5px;
+        font-size:bold;
+    }
+
+ .slider{
+    width:100%;
+    height: 500px;
+    background-color: #fff;
+ }  
+
+ .slider1{
+    width:100%;
+    height: 300px;
+    background-color: #fff;
+ }
+ .slid1{
+    width:150px;
+    height: 200px;
+   
+    margin: 20px;
+    padding:30px;
+    float:left;
+   }
+
+   .slid2{
+    width:300px;
+    height: 200px;
+    
+    margin: 20px;
+    padding:30px;
+    float:left;
+   }
+   .slid3{
+    width:150px;
+    height: 200px;
+    
+    margin: 20px;
+    padding:30px;
+    float:left;
+   }
+   
+   .slid2 a{
+    width: 300px;
+  height: 30px;
+    color:#fff;
+    border:10px solid #3c89c3 ;
+    background-color: #3c89c3;
+    text-decoration: none;
+     padding:7px;
+     margin:173px 51px 123px 50px; 
+     display: inline-block;
+     text-align: center;
+     font-size: 24px;
+        
+    }
+ 
+ .content{
+    width:100%;
+    height: 200px;
+    background-color: #2cb589;
+     }
+
+     .content1{
+        width:100%;
+        height: 200px;
+        background-color: #2cb589;
+        color:#fff;
+        text-align: center;
+        padding-top:95px;
+         }
+     
+.footer{
+    width:100%;
+    height: 500px;
+    background-color: #fff;
+
+}
+
+.footer1{
+    width:100%;
+    height: 150px;
+    text-align: center;
+    padding-top:95px;
+}
+
+.footer3{
+    width:100%;
+    height: 350px;
+    text-align: justify ;  
+    color: #6e6262;   
+        
+}
+
+.footer2{
+    width:150px;
+    height: 250px;
+    background-color: #f3e1e0;
+    float: left;
+    margin: 10px;
+    padding:40px;
+
+
+
+}
+
+.footer5{
+    width:150px;
+    height: 250px;
+    background-color: #fef8e6;
+    float: left;
+    margin: 10px;
+    padding:40px;
+
+
+
+}
+
+.footer4{
+    width:150px;
+    height: 250px;
+    background-color: #E0F2DB;
+    float: left;
+    margin: 10px;
+    padding:40px;
+
+
+
+}
+
+.footer6{
+    width:150px;
+    height: 250px;
+    background-color: #dcedf5;
+    float: left;
+    margin: 10px;
+    padding:40px;
+
+
+
+}
+
