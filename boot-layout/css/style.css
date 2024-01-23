@@ -10,3 +10,7 @@ body{
 .logo{
     font-size: 25px;
 }
+#menu .nav .nav-item .nav-link:hover{
+    background-color: #FFF;
+    color: #000 !important;
+}
