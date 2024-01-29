@@ -6,5 +6,5 @@ function homeloan(emi,r,y) {
     return p;
 }
 
-let ans = homeloan(16000,7,30)
+let ans = homeloan(15000, 10.5, 20)
 console.log(ans)
