@@ -29,6 +29,6 @@ function gst(p, s, g="male")
 
 
 gst(10000, 2,);
-gst(10000, 2 ,"male");
+gst(10000, 2,"male");
 gst(10000, 2 ,"female");
-gst(35000, 4, "female");
+gst(35000, 4, "femaleeee");
