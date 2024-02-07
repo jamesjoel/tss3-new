@@ -1,0 +1,46 @@
+<%- include("header") %>
+
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>About Page</h3>
+                    <%
+                        let a = 280;
+                        let b = 7;
+
+                        let x = "Pune";
+                        let y = "Delhi";
+
+                        if(a % b == 0)
+                        {
+                    %>
+                            <h1><%= x %></h1>
+                    <%   }
+                        else
+                        {
+                    %>
+                            <h1><%= y %></h1>
+                    <%
+                        }
+                    %>
+
+
+
+
+                    <%
+                    let data = ["rohit", "amar", "vijay", "nidhi", "parul"]
+
+                    data.forEach((value)=>{ %>
+
+                        <h3><%= value %></h3>
+
+                    <%    
+                    })    
+                    %>
+
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

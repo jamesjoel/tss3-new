@@ -1,0 +1,39 @@
+
+
+<%- include("header") %>
+
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Contact Page</h3>
+                    <div class="row">
+                        <div class="col-md-10 offset-md-1">
+                            <table class="table table-info table-bordered table-hover table-striped">
+                                <tr>
+                                    <th>S.No.</th>
+                                    <th>Name</th>
+                                    <th>City</th>
+                                    <th>Fee</th>
+                                    <th>Gender</th>
+                                </tr>
+                                <% user.forEach((value, index)=>{ %>
+
+                                    <tr>
+                                        <td><%= index+1 %></td>
+                                        <td><%= value.name %></td>
+                                        <td><%= value.city %></td>
+                                        <td><%= value.fee %></td>
+                                        <td><%= value.gender %></td>
+                                    </tr>
+
+                                <% }) %>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
+
