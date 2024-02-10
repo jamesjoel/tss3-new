@@ -1,0 +1,31 @@
+<%- include("../includes/header") %>
+
+<div class="container" style="min-height: 700px;">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 my-5">
+            
+            <div class="card border border-primary">
+                <div class="card-header bg-primary">
+                    <h3>Your EMI</h3>
+                </div>
+                <div class="card-body">
+                    <h6>Principle : <%= pri %></h6>
+                    <h6>Rate : <%= rate %>%</h6>
+                    <h6>Duration : <%= dur %> year</h6>
+                    <br />
+                    <br />
+                    <h4>Your EMI is : &#8377; <%= Math.round(emi) %> /-</h4>    
+                    <br />
+                    <br />
+                    <a class="btn btn-info" href="/emi">Calculate Again</a>
+                </div>
+                
+            </div>
+
+            
+            
+        </div>
+    </div>
+</div>
+
+<%- include("../includes/footer") %>

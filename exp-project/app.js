@@ -5,6 +5,8 @@ const routes = require("./allRoutes/AllRoutes")
 app.use(express.static(__dirname+"/assets"));
 app.set("view engine", "ejs");
 
+app.use(express.json())
+app.use(express.urlencoded({ extended : true }));
 
 app.use(routes);
 
