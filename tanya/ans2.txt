@@ -1,0 +1,17 @@
+SELECT * FROM table LIMIT 2 SKIP 1 ORDER BY number ASC
+
+CREATE TABLE tablename (
+    colname int NOT NULL AUTO_INCREMENT,
+    ....
+);
+
+go to shell prompt > mysql > batch-filename
+
+use dbname
+
+
+CREATE TABLE Orders (
+    PersonID int,
+    PRIMARY KEY (OrderID),
+    SECONDARY KEY (PersonID) REFERENCES Persons(PersonID)
+);

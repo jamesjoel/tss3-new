@@ -1,0 +1,43 @@
+1. SELECT (SELECT AVG(salary) FROM employees INNER JOIN certified ON employees.eid = certified.eid) 
+-
+(SELECT AVG(salary) FROM employees) 
+AS diffence
+
+2 .SELECT e.name,e.salary 
+FROM Employees e LEFT JOIN Certified c 
+ON e.eid=c.eid
+WHERE e.salary >
+(SELECT AVG (E.salary) AS avgsal
+FROM Employees E
+WHERE E.eid IN (SELECT DISTINCT C.eid FROM Certified C ))
+
+
+3 . select distinct x.ename from
+(select e.ename,min(case when a.cruisingrange>1000 then 1 else 0 end ) as range,count(*) as no_aircrafts
+from Certified c join Aircraft a 
+on c.aid=a.aid
+join Employees e
+on e.eid=c.eid
+group by e.ename
+) x
+where x.range=1
+
+4. select ename from Employees where salary<
+(select min(price) from Flights where from='A' and to='B')
+
+5. select x.from,x.to from
+(select distinct f.from,f.to,count(distinct c.eid) as pilot_certification
+from Flights f join Aircraft a
+on f.flno=a.aid
+join Certified c
+on c.aid=a.aid
+join Employees e
+on e.eid=c.eid
+where c.Salary>1000000 and f.distance>a.cruisingrange
+group by f.from,f.to
+having count(distinct c.eid)=(select count(distinct eid) from Employees where salary>1000000)x
+
+ 
+
+
+
