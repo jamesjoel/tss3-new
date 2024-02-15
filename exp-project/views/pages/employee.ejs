@@ -1,0 +1,40 @@
+<%- include("../includes/header") %>
+
+<div class="container" style="min-height: 700px;">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <form action="/employee/add" method="post">
+            <h3>Employee Page</h3>
+            <div class="my-3">
+                <label>Full Name</label>
+                <input name="fullname" type="text" class="form-control"/>
+            </div>
+            <div class="my-3">
+                <label>Salary</label>
+                <input name="salary" type="text" class="form-control"/>
+            </div>
+            <div class="my-3">
+                <label>Gender</label>
+                <br />
+                Male <input name="gender" value="male" type="radio" />
+                Female <input name="gender" value="female" type="radio" />
+            </div>
+            <div class="my-3">
+                <label>Post</label>
+                <select name="post" class="form-control">
+                    <option>Select</option>
+                    <option>Office Staff</option>
+                    <option>HR</option>
+                    <option>Manager</option>
+                    <option>Other</option>
+                </select>
+
+            </div>
+            <br />
+            <button type="submit" class="btn btn-success">Add</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include("../includes/footer") %>

@@ -1,0 +1,31 @@
+<%- include("../includes/header") %>
+
+<div class="container" style="min-height: 700px;">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>List Of All Employee</h3>
+            <table class="table table-dark table-hover table-striped">
+                <tr>
+                    <th>S.No.</th>
+                    <th>Full Name</th>
+                    <th>Salary</th>
+                    <th>Post</th>
+                </tr>
+
+                <% data.forEach((value, index)=>{ %>
+
+                    <tr>
+                        <td><%= index+1 %></td>
+                        <td><%= value.fullname %></td>
+                        <td><%= value.salary %></td>
+                        <td><%= value.post %></td>
+                    </tr>
+
+                <% }) %>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<%- include("../includes/footer") %>
