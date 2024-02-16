@@ -30,6 +30,17 @@
                 </select>
 
             </div>
+
+            <div class="my-3">
+                <label>City</label>
+                <select name="city" class="form-control">
+                    <option>Select</option>
+                    <% city.forEach(value=>{ %>
+                        <option><%= value.name %></option>
+                    <% }) %>
+                </select>
+            </div>
+
             <br />
             <button type="submit" class="btn btn-success">Add</button>
             </form>

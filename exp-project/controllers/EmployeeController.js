@@ -1,8 +1,13 @@
 const routes = require("express").Router();
 const Employee = require("../models/Employee");
+const City = require("../models/City");
 
-routes.get("/", (req, res)=>{
-    res.render("pages/employee")
+routes.get("/", async(req, res)=>{
+
+    let city = await City.find();
+    let pagedata = {city : city};
+
+    res.render("pages/employee", pagedata)
 })
 
 routes.post("/add", async(req, res)=>{
