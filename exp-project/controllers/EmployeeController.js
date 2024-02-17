@@ -21,4 +21,17 @@ routes.get("/list", async(req, res)=>{
     res.render("pages/employee-list", pagedata);
 })
 
+routes.get("/delete/:a", async(req, res)=>{
+    let x = req.params.a;
+    await Employee.deleteMany({ _id : x});
+    res.redirect("/employee/list");
+})
+routes.get("/detail/:a", async(req, res)=>{
+    let x = req.params.a;
+    let result = await Employee.find({_id : x});
+    let pagedata = { emp : result[0] }
+    res.render("pages/employee-detail", pagedata)
+    
+})
+
 module.exports = routes;

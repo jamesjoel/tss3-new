@@ -8,9 +8,8 @@
                 <tr>
                     <th>S.No.</th>
                     <th>Full Name</th>
-                    <th>Salary</th>
-                    <th>Post</th>
-                    <th>City</th>
+                    <th>Detail</th>
+                    <th>Delete</th>
                 </tr>
 
                 <% data.forEach((value, index)=>{ %>
@@ -18,9 +17,8 @@
                     <tr>
                         <td><%= index+1 %></td>
                         <td><%= value.fullname %></td>
-                        <td><%= value.salary %></td>
-                        <td><%= value.post %></td>
-                        <td><%= value.city %></td>
+                        <td><a href="/employee/detail/<%= value._id %>" class="btn btn-info btn-sm">Detail</a></td>
+                        <td><a href="/employee/delete/<%= value._id %>" class="btn btn-sm btn-danger">Delete</a></td>
                     </tr>
 
                 <% }) %>
