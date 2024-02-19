@@ -34,4 +34,19 @@ routes.get("/detail/:a", async(req, res)=>{
     
 })
 
+routes.get("/edit/:a", async(req, res)=>{
+    let x = req.params.a;
+    let result = await Employee.find({_id : x });
+    let city = await City.find();
+    let pagedata = { emp : result[0], city : city};
+    res.render("pages/employee-edit", pagedata);
+})
+
+routes.post("/update/:a", async(req, res)=>{
+    let x = req.params.a;
+    await Employee.updateMany({_id : x}, req.body);
+    res.redirect("/employee/list");
+})
+
+
 module.exports = routes;

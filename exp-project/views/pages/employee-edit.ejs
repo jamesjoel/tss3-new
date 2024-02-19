@@ -1,0 +1,51 @@
+<%- include("../includes/header") %>
+
+<div class="container" style="min-height: 700px;">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <form action="/employee/update/<%= emp._id %>" method="post">
+            <h3>Update Employee Page</h3>
+            <div class="my-3">
+                <label>Full Name</label>
+                <input name="fullname" value="<%= emp.fullname %>" type="text" class="form-control"/>
+            </div>
+            <div class="my-3">
+                <label>Salary</label>
+                <input name="salary" value="<%= emp.salary %>" type="text" class="form-control"/>
+            </div>
+            <div class="my-3">
+                <label>Gender</label>
+                <br />
+                Male <input <% if(emp.gender=="male"){%> checked <% } %> name="gender" value="male" type="radio" />
+                Female <input <% if(emp.gender=="female"){%> checked <% } %> name="gender" value="female" type="radio" />
+            </div>
+            <div class="my-3">
+                <label>Post</label>
+                <select name="post" class="form-control">
+                    <option>Select</option>
+                    <option <% if(emp.post == "Office Staff") { %> selected <% } %> >Office Staff</option>
+                    <option <% if(emp.post == "HR") { %> selected <% } %>>HR</option>
+                    <option <% if(emp.post == "Manager") { %> selected <% } %>>Manager</option>
+                    <option <% if(emp.post == "Other") { %> selected <% } %>>Other</option>
+                </select>
+
+            </div>
+
+            <div class="my-3">
+                <label>City</label>
+                <select name="city" class="form-control">
+                    <option>Select</option>
+                    <% city.forEach(value=>{ %>
+                        <option <% if(emp.city==value.name) { %> selected <%} %> ><%= value.name %></option>
+                    <% }) %>
+                </select>
+            </div>
+
+            <br />
+            <button type="submit" class="btn btn-success">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include("../includes/footer") %>
