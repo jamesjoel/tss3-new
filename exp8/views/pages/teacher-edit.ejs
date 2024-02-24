@@ -1,0 +1,49 @@
+
+<%- include("../includes/header") %>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Teacher Page</h2>
+            <div class="row">
+                <form action="/teacher/update/<%= result._id %>" method="post">
+                <div class="col-md-6 offset-md-3">
+                    <h3>Update Teacher</h3>
+                    <div class="my-3">
+                        <label>Name</label>
+                        <input type="text" value="<%= result.name %>" name="name" class="form-control" />
+                    </div>
+                    <div class="my-3">
+                        <label>Salary</label>
+                        <input value="<%= result.salary %>" type="text" name="salary" class="form-control" />
+                    </div>
+                    <div class="my-3">
+                        <label>Gender</label>
+                        <br />
+                        Male <input <% if(result.gender=="male") { %> checked <% } %> type="radio" name="gender" value="male"  />
+                        Female <input <% if(result.gender=="female") { %> checked <% } %> type="radio" name="gender" value="female"  />
+                    </div>
+                    <div class="my-3">
+                        <label>Address</label>
+                        <textarea name="address" class="form-control" ><%= result.address %></textarea>
+                    </div>
+                    <div class="my-3">
+                        <label>City</label>
+                        <select name="city" class="form-control" >
+                            <option>Select</option>
+                            <option <% if(result.city == "Indore"){ %> selected <% } %>>Indore</option>
+                            <option <% if(result.city == "Mumbai"){ %> selected <% } %>>Mumbai</option>
+                            <option  <% if(result.city == "Pune"){ %> selected <% } %>>Pune</option>
+                            <option <% if(result.city == "Delhi"){ %> selected <% } %>>Delhi</option>
+                        </select>
+                    </div>
+                    <Br />
+                    <button type="submit" class="btn btn-success">Update</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

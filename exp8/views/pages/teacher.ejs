@@ -1,0 +1,49 @@
+
+<%- include("../includes/header") %>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Teacher Page</h2>
+            <div class="row">
+                <form action="/teacher/save" method="post">
+                <div class="col-md-6 offset-md-3">
+                    <h3>Add New Teacher</h3>
+                    <div class="my-3">
+                        <label>Name</label>
+                        <input type="text" name="name" class="form-control" />
+                    </div>
+                    <div class="my-3">
+                        <label>Salary</label>
+                        <input type="text" name="salary" class="form-control" />
+                    </div>
+                    <div class="my-3">
+                        <label>Gender</label>
+                        <br />
+                        Male <input type="radio" name="gender" value="male"  />
+                        Female <input type="radio" name="gender" value="female"  />
+                    </div>
+                    <div class="my-3">
+                        <label>Address</label>
+                        <textarea name="address" class="form-control" ></textarea>
+                    </div>
+                    <div class="my-3">
+                        <label>City</label>
+                        <select name="city" class="form-control" >
+                            <option>Select</option>
+                            <option>Indore</option>
+                            <option>Mumbai</option>
+                            <option>Pune</option>
+                            <option>Delhi</option>
+                        </select>
+                    </div>
+                    <Br />
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
