@@ -1,0 +1,47 @@
+<%- include("../include/header") %>
+
+<div class="container-fluid my-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2 fw-bold ">
+            <div class="card">
+                <div class="card-head text-center">
+                    <h1>User </h1>
+                </div>
+                <div class="card-body ">
+                    <form action="/user/update/<%= result._id %>" method="post">
+                    <label>Full Name</label>
+                    <input type="text" value="<%= result.fullname %>" name="fullname" class="form-control">
+
+                    <label>Email</label>
+                    <input type="text" value="<%= result.email %>" name="email" class="form-control">
+
+                    <label>Contact</label>
+                    <input type="text" value="<%= result.contact %>" name="contact" class="form-control">
+
+                    <label>Gender</label>
+                    <br>
+                    Male:
+                    <input type="radio" name="gender" value="male" class="form-check" <% if(result.gender=="male"){%>  checked <% } %> >
+                    Female:
+                    <input  type="radio" name="gender" value="female" class="form-check" <% if(result.gender=="female"){%>  checked <% } %>>
+
+                    <label>City</label>
+                    <select name="city" class="form-control">
+                        <option >Select</option>
+                        <option <% if(result.city=="Indore"){%>  selected <% } %>>Indore</option>
+                        <option <% if(result.city=="Mumbai"){%>  selected <% } %>>Mumbai</option>
+                        <option <% if(result.city=="Delhi"){%>  selected <% } %>>Delhi</option>
+                        <option <% if(result.city=="Pune"){%>  selected <% } %>>Pune</option>
+
+                    </select>
+                
+                    <button type="submit" class="btn btn-info">Update</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
