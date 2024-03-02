@@ -1,0 +1,11 @@
+.smallbox{
+    height: 50px;
+    width: 50px;
+    
+    margin: 20px;
+    float: left;
+}
+.mainbox{
+    height: 400px;
+    width: 400px;
+}
