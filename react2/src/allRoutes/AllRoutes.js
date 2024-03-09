@@ -10,6 +10,7 @@ import Event1 from '../components/pages/Event1'
 import Event2 from '../components/pages/Event2'
 import Event3 from '../components/pages/Event3'
 import Event4 from '../components/pages/Event4'
+import API from '../components/pages/API'
 
 const AllRoutes = () => {
   return (
@@ -24,6 +25,7 @@ const AllRoutes = () => {
                     <Route path="event2" element={<Event2 />} />
                     <Route path="event3" element={<Event3 />} />
                     <Route path="event4" element={<Event4 />} />
+                    <Route path="api" element={<API />} />
 
                 </Routes>
   )
