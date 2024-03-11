@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 
 const API = () => {
@@ -7,20 +7,23 @@ const API = () => {
 
   let [showSpinner, setShowSpinner] = useState(false);
 
-  let getdata = ()=>{
-    setShowSpinner(true);
+  useEffect(()=>{
     axios.get("https://jsonplaceholder.typicode.com/users").then(response=>{
       setUser(response.data);
-      setShowSpinner(false)
+      
     })
-  }
+  },[])
+
+
+
+ 
 
   return (
     <div className="container my-4">
       <div className="row">
         <div className="col-md-12">
             <h2>Network Request in React Using Axios</h2>
-            <button onClick={getdata} className='btn btn-primary'>Get Data { showSpinner == true ? <span className='spinner-border spinner-border-sm'></span> : ''}</button>
+            
             <br />
             {
               user.length > 0 

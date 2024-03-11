@@ -1,7 +1,20 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Slider from '../shared/Slider'
 import { NavLink } from 'react-router-dom'
+import axios from 'axios'
 const Signup = () => {
+
+  let [city, setCity] = useState([]);
+  
+  // let city = null;
+
+  useEffect(()=>{
+    axios.get("http://localhost:8080/api/city").then(response=>{
+      console.log(response.data);
+      setCity(response.data);
+    })
+  },[])
+
   return (
     <>
     <Slider />
@@ -31,6 +44,7 @@ const Signup = () => {
                     <label>Re-Password</label>
                     <input type='password' className='form-control' />
                   </div>
+                  
                   <div className='my-4'>
                     <label>Gender</label>
                     <br />
@@ -41,7 +55,21 @@ const Signup = () => {
                     <label>Contact</label>
                     <input type='text' className='form-control' />
                   </div>
+                  <div className='my-4'>
+                    <label>Address</label>
+                    <textarea className='form-control' ></textarea>
+                  </div>
+                  <div className='my-4'>
+                    <label>City</label>
+                    <select className='form-control' >
+                      <option>Select</option>
+                      {
+                        city.map(value=><option>{value.name}</option>)
+                      }
+                    </select>
+                  </div>
                 </div>
+                
                 <div className="card-footer">
                   {/* <div class="d-grid">
                   </div> */}
