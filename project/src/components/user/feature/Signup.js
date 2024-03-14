@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import Slider from '../shared/Slider'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 const Signup = () => {
-
+  let navigate = useNavigate();
   let [user, setUser] = useState({
     name : "",
     email : "",
@@ -31,12 +31,15 @@ const Signup = () => {
     let x = event.target.value;
     axios.get("http://localhost:8080/api/city/getcitybystate/"+x).then(response=>{
       setCity(response.data);
+      
     })
   }
 
   let save = ()=>{
     axios.post("http://localhost:8080/api/signup", user).then(response=>{
-      console.log(response);
+      console.log(response.data);
+      navigate("/login");
+
     })
   }
 
