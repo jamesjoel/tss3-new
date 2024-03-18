@@ -3,19 +3,8 @@ import Slider from '../shared/Slider'
 import { NavLink, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useFormik } from 'formik'
-import * as YUP from 'yup';
-
-let SignupSchema = YUP.object({
-  name : YUP.string().required("Insert Your Full Name"),
-  email : YUP.string().required("Insert Your Email Id"),
-  password : YUP.string().required("Insert Your Password"),
-  repassword : YUP.string().required("Insert Your Re-Password"),
-  address : YUP.string().required("Insert Your Address"),
-  gender : YUP.string().required("Select Your Gender"),
-  state : YUP.string().required("Select Your State"),
-  city : YUP.string().required("Select Your City"),
-  contact : YUP.string().required("Insert Your Contact Number")
-});
+import SignupSchema from '../../../schemas/SignupSchema'
+import {API_URL} from '../../../util/API_URL'
 
 
 
@@ -36,24 +25,19 @@ const Signup = () => {
       address : ""
     },
     onSubmit : (formdata)=>{
-      console.log(formdata);
-      return;
-      axios.post("http://localhost:8080/api/signup", formdata).then(response=>{
+      
+      axios.post(`${API_URL}/signup`, formdata).then(response=>{
         navigate("/login");
       })
     }
   })
-
-
-
-  
 
   let [city, setCity] = useState([]);
   let [state, setState] = useState([]);
   // let city = null;
 
   useEffect(()=>{
-    axios.get("http://localhost:8080/api/city/state").then(response=>{
+    axios.get(`${API_URL}/city/state`).then(response=>{
       setState(response.data);
     })
   },[])
@@ -61,7 +45,7 @@ const Signup = () => {
  
   let getcity = (event)=>{
     let x = event.target.value;
-    axios.get("http://localhost:8080/api/city/getcitybystate/"+x).then(response=>{
+    axios.get(`${API_URL}/city/getcitybystate/${x}`).then(response=>{
       setCity(response.data);
       
     })
