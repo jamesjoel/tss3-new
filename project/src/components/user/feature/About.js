@@ -1,8 +1,13 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Slider from '../shared/Slider'
 import axios from 'axios'
 
 const About = () => {
+
+  useEffect(()=>{
+    let a = localStorage.getItem("access-token");
+    console.log(a);
+  },[])
 
   let [stu, setStu] = useState({ name : "", fee : "", subject : "" });
 

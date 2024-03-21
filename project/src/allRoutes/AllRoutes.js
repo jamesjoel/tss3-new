@@ -11,6 +11,7 @@ import Dashboard from '../components/admin/feature/Dashboard'
 import Users from '../components/admin/feature/Users'
 import Booking from '../components/admin/feature/Booking'
 import AdminDestination from '../components/admin/feature/Destination'
+import MyBooking from '../components/user/feature/MyBooking'
 
 const AllRoutes = () => {
   return (
@@ -22,6 +23,7 @@ const AllRoutes = () => {
                   <Route path='destination' element={<Destination />} />
                   <Route path='login' element={<Login />} />
                   <Route path='signup' element={<Signup />} />
+                  <Route path='my-booking' element={<MyBooking />} />
 
                 </Route>
 
