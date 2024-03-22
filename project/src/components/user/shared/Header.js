@@ -27,9 +27,23 @@ const Header = () => {
 					
 				</div>
 			  </li>
-	          
-			  <li className="nav-item"><NavLink to="/login" className="nav-link">Login</NavLink></li>
-	          <li className="nav-item"><NavLink to="/signup" className="nav-link">Signup</NavLink></li>
+	          {
+				localStorage.getItem("access-token") 
+				?
+				<>
+					<li className="nav-item"><NavLink to="/user/my-booking" className="nav-link">My-Booking</NavLink></li>
+	          		<li className="nav-item"><NavLink to="/user/my-profile" className="nav-link">My-Profile</NavLink></li>
+	          		<li className="nav-item"><NavLink to="/user/logout" className="nav-link">Logout</NavLink></li>
+				</>
+				:
+				<>
+					<li className="nav-item"><NavLink to="/login" className="nav-link">Login</NavLink></li>
+	          		<li className="nav-item"><NavLink to="/signup" className="nav-link">Signup</NavLink></li>
+				</>
+			  }
+			  
+			  
+			  
 	          
 	          
 	          <li className="nav-item cta"><a href="#" className="nav-link">Book Now</a></li>

@@ -21,8 +21,9 @@ const Login = () => {
           // console.log(response.data);
           if(response.data.success==true)
           {
+            // localStorage.setItem(key, value)
             localStorage.setItem("access-token", response.data.token);
-            navigate("/my-booking");
+            navigate("/user/my-booking");
 
           }
           if(response.data.success==false && response.data.errType == 1)

@@ -1,5 +1,5 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Routes, Route, useNavigate, Outlet } from 'react-router-dom'
 import Home from '../components/user/feature/Home'
 import About from '../components/user/feature/About'
 import Destination from '../components/user/feature/Destination'
@@ -12,6 +12,8 @@ import Users from '../components/admin/feature/Users'
 import Booking from '../components/admin/feature/Booking'
 import AdminDestination from '../components/admin/feature/Destination'
 import MyBooking from '../components/user/feature/MyBooking'
+import Logout from '../components/user/feature/Logout'
+import MyProfile from '../components/user/feature/MyProfile'
 
 const AllRoutes = () => {
   return (
@@ -23,7 +25,13 @@ const AllRoutes = () => {
                   <Route path='destination' element={<Destination />} />
                   <Route path='login' element={<Login />} />
                   <Route path='signup' element={<Signup />} />
-                  <Route path='my-booking' element={<MyBooking />} />
+                  
+                  
+                  <Route path='user' element={<UserProtactedRoute />}>
+                      <Route path='my-booking' element={<MyBooking />} />
+                      <Route path='my-profile' element={<MyProfile />} />
+                      <Route path='logout' element={<Logout />} />
+                  </Route>
 
                 </Route>
 
@@ -37,5 +45,20 @@ const AllRoutes = () => {
         </>
   )
 }
+
+
+let UserProtactedRoute = ()=>{
+  let navigate = useNavigate();
+  useEffect(()=>{
+    if(! localStorage.getItem("access-token"))
+    {
+      navigate("/login");
+    }
+  },[])
+  return(
+    <Outlet />
+  )
+}
+
 
 export default AllRoutes
