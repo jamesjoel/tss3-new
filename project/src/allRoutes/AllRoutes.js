@@ -13,7 +13,9 @@ import Booking from '../components/admin/feature/Booking'
 import AdminDestination from '../components/admin/feature/Destination'
 import MyBooking from '../components/user/feature/MyBooking'
 import Logout from '../components/user/feature/Logout'
+import AdminLogin from '../components/admin/feature/Login'
 import MyProfile from '../components/user/feature/MyProfile'
+import UserProtactedModule from '../modules/UserProtactedModule'
 
 const AllRoutes = () => {
   return (
@@ -27,7 +29,7 @@ const AllRoutes = () => {
                   <Route path='signup' element={<Signup />} />
                   
                   
-                  <Route path='user' element={<UserProtactedRoute />}>
+                  <Route path='user' element={<UserProtactedModule />}>
                       <Route path='my-booking' element={<MyBooking />} />
                       <Route path='my-profile' element={<MyProfile />} />
                       <Route path='logout' element={<Logout />} />
@@ -36,6 +38,8 @@ const AllRoutes = () => {
                 </Route>
 
                 <Route path='admin' element={<AdminModule />}>
+
+                  <Route path='' element={<AdminLogin />} />
                   <Route path='dashboard' element={<Dashboard />} />
                   <Route path='users' element={<Users />} />
                   <Route path='booking' element={<Booking />} />
@@ -47,18 +51,7 @@ const AllRoutes = () => {
 }
 
 
-let UserProtactedRoute = ()=>{
-  let navigate = useNavigate();
-  useEffect(()=>{
-    if(! localStorage.getItem("access-token"))
-    {
-      navigate("/login");
-    }
-  },[])
-  return(
-    <Outlet />
-  )
-}
+
 
 
 export default AllRoutes
