@@ -14,6 +14,7 @@ routes.use("/api/demo", require("../controllers/DemoController"));
 routes.use("/api/signup", require("../controllers/SignupController"));
 routes.use("/api/userauth", require("../controllers/UserAuthController"));
 routes.use("/api/adminauth", require("../controllers/AdminAuthController"));
+routes.use("/api/destination", require("../controllers/DestinationController"));
 
 module.exports = routes;
 

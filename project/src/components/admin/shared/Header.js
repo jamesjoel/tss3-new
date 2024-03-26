@@ -11,7 +11,10 @@ const Header = () => {
           <span className='navbar-toggler-icon'></span>
         </button>
         <div id='menu' className='collapse navbar-collapse'>
-          <ul className='nav navbar-nav'>
+          {
+            localStorage.getItem("admin-token")
+            ?
+            <ul className='nav navbar-nav'>
             <li className='nav-item'>
               <NavLink to='/admin/dashboard' className='nav-link'>Dashboard</NavLink>
             </li>
@@ -24,7 +27,13 @@ const Header = () => {
             <li className='nav-item'>
               <NavLink to='/admin/booking' className='nav-link'>Booking</NavLink>
             </li>
+            <li className='nav-item'>
+              <NavLink to='/admin/logout' className='nav-link'>Logout</NavLink>
+            </li>
           </ul>
+          :
+          ""
+          }
         </div>
       </div>
     </nav>
