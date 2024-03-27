@@ -3,6 +3,7 @@ import Slider from '../shared/Slider'
 import RecentPost from '../shared/RecentPost'
 import axios from 'axios'
 import { API_URL } from '../../../util/API_URL'
+import DestinationBox from '../shared/DestinationBox'
 
 
 const Home = () => {
@@ -81,19 +82,8 @@ const Home = () => {
 
 						{
 							allDestination.map(value => {
-								return (
-									<div className="col-md-4 ">
-										<div className="project-wrap">
-											<a href="#" className="img" style={{ backgroundImage: "url(/assets/images/destination-1.jpg)" }}></a>
-											<div className="text p-4">
-												
-												
-												<h5><a href="#">{value.title}</a></h5>
-												
-												<a href='' className='btn btn-info'>View Detail</a>
-											</div>
-										</div>
-									</div>
+								return(
+									<DestinationBox value={value} />
 								)
 							})
 						}
