@@ -12,7 +12,7 @@ const Destination = () => {
   let [allDestination, setAllDestination] = useState([]);
   useEffect(()=>{
 
-    axios.get(`${API_URL}/destination/${params.x}`).then(response=>{
+    axios.get(`${API_URL}/destination/category/${params.x}`).then(response=>{
       setAllDestination(response.data);
     })
 

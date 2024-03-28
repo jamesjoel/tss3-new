@@ -17,6 +17,7 @@ import AdminLogin from '../components/admin/feature/Login'
 import AdminLogout from '../components/admin/feature/Logout'
 import MyProfile from '../components/user/feature/MyProfile'
 import UserProtactedModule from '../modules/UserProtactedModule'
+import DestinationList from '../components/admin/feature/DestinationList'
 
 const AllRoutes = () => {
   return (
@@ -45,6 +46,7 @@ const AllRoutes = () => {
                   <Route path='users' element={<Users />} />
                   <Route path='booking' element={<Booking />} />
                   <Route path='destination' element={<AdminDestination />} />
+                  <Route path='destination/list' element={<DestinationList />} />
                   <Route path='logout' element={<AdminLogout />} />
                 </Route>
             </Routes>

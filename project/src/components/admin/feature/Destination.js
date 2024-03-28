@@ -1,7 +1,7 @@
 import React from 'react'
 import {useFormik} from 'formik'
 import {API_URL} from '../../../util/API_URL'
-import {useNavigate} from 'react-router-dom'
+import {NavLink, useNavigate} from 'react-router-dom'
 import axios from 'axios'
 const Destination = () => {
 
@@ -23,6 +23,7 @@ const Destination = () => {
 
   return (
     <div className="container my-4">
+      <NavLink to="/admin/destination/list" className="btn btn-info">View All Destination</NavLink>
         <form onSubmit={addForm.handleSubmit}>
       <div className="row">
         <div className="col-md-8 offset-md-2">
