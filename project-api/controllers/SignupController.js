@@ -9,7 +9,7 @@ routes.post("/", async(req, res)=>{
     req.body.password = sha1(req.body.password);
 
     await User.create(req.body);
-    res.send({ success : true });
+    res.send({ success : true }); 
 })
 
 module.exports = routes;
