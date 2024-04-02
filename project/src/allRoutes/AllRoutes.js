@@ -18,6 +18,8 @@ import AdminLogout from '../components/admin/feature/Logout'
 import MyProfile from '../components/user/feature/MyProfile'
 import UserProtactedModule from '../modules/UserProtactedModule'
 import DestinationList from '../components/admin/feature/DestinationList'
+import Hotels from '../components/admin/feature/Hotels'
+import HotelsList from '../components/admin/feature/HotelsList'
 
 const AllRoutes = () => {
   return (
@@ -46,6 +48,8 @@ const AllRoutes = () => {
                   <Route path='users' element={<Users />} />
                   <Route path='booking' element={<Booking />} />
                   <Route path='destination' element={<AdminDestination />} />
+                  <Route path='hotels' element={<Hotels />} />
+                  <Route path='hotels/list' element={<HotelsList />} />
                   <Route path='destination/list' element={<DestinationList />} />
                   <Route path='logout' element={<AdminLogout />} />
                 </Route>
