@@ -6,8 +6,20 @@ const City = require("../models/City");
 
 routes.get("/state", async(req, res)=>{
     let result = await City.distinct("state");
+    // let result2 = await User.find();
     res.send(result);
 })
+/*
+routes.get("/state", (req, res)=>{
+    City.distinct("state", (result1)=>{
+
+        User.find((result2)=>{
+
+        })
+        
+    });
+})
+*/
 
 // localhost:8080/api/city/getcitybystate/Gujarat
 

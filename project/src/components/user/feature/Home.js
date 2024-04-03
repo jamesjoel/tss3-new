@@ -12,13 +12,22 @@ const Home = () => {
 	let [allDestination, setAllDestination] = useState([]);
 	let [allHotels, setAllHotels] = useState([]);
 	useEffect(() => {
-		axios.get(`${API_URL}/destination`).then(response => {
-			setAllDestination(response.data);
-		})
-		axios.get(`${API_URL}/hotels`).then(response => {
-			setAllHotels(response.data);
-		})
+		getAllData();
 	}, [])
+
+	let getAllData = async()=>{
+		// axios.get(`${API_URL}/destination`).then(response => {
+		// 	setAllDestination(response.data);
+		// })
+		// axios.get(`${API_URL}/hotels`).then(response => {
+		// 	setAllHotels(response.data);
+		// })
+		let response1 = await axios.get(`${API_URL}/destination`)
+		setAllDestination(response1.data);
+
+		let response2 = await axios.get(`${API_URL}/hotels`);
+		setAllHotels(response2.data);
+	}
 
 
 	return (
@@ -69,3 +78,45 @@ const Home = () => {
 }
 
 export default Home
+/*
+	useEffect(()=>{
+
+		axios.get("info1").then(response1=>{
+			setVar1(response1.data);
+			axios.get("info2").then(response2=>{
+				setVar2(response2.data);
+				axios.get("info3").then(response3=>{
+					setVar3(response3.data);
+					axios.get("info4").then(response4=>{
+						setVar4(response4.data);
+					})
+				})
+			})
+
+		})
+
+
+
+	},[])
+
+
+
+
+	let demo = async()=>{
+		let response1 = await axios.get("info1");
+		setVar1(response1.data);
+		let response2 = await axios.get("info2");
+		setVar2(response2.data);
+		let response3 = await axios.get("info3");
+		setVar3(response3.data);
+		let response4 = await axios.get("info4");
+		setVar4(response4.data);
+	}
+
+	useEffect(()=>{
+		demo();
+	},[])
+
+
+
+*/
