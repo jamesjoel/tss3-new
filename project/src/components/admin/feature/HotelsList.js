@@ -6,22 +6,40 @@ const HotelsList = () => {
     let [hotels, setHotels] = useState([]);
 
     let [hotel, setHotel] = useState({});
+    // useEffect(()=>{
+    //     axios.get(`${API_URL}/hotels`).then(response=>{
+    //         setHotels(response.data);
+    //     })
+    // },[])
+
+    let getAllData = async()=>{
+        let response = await axios.get(`${API_URL}/hotels`)
+        setHotels(response.data);
+    }
+
     useEffect(()=>{
-        axios.get(`${API_URL}/hotels`).then(response=>{
-            setHotels(response.data);
-        })
+        getAllData();
     },[])
+
+
 
     let askDelete = (obj)=>{
         setHotel(obj);
     }
 
-    let confDelete = ()=>{
-        axios.delete(`${API_URL}/hotels/${hotel._id}`).then(response=>{
-            btn.current.click();
-            setHotels(()=>{
-                return hotels.filter(value=> value._id != hotel._id);
-            })
+    let confDelete = async ()=>{
+        // axios.delete(`${API_URL}/hotels/${hotel._id}`).then(response=>{
+            
+        //     btn.current.click();
+        //     setHotels(()=>{
+        //         return hotels.filter(value=> value._id != hotel._id);
+        //         // return []
+        //     })
+        // })
+        let response = await axios.delete(`${API_URL}/hotels/${hotel._id}`);
+        btn.current.click();
+        setHotels(()=>{
+                    return hotels.filter(value=> value._id != hotel._id);
         })
     }
 

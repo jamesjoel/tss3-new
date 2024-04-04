@@ -34,6 +34,10 @@ const Login = () => {
           {
             setErrMsg("This Password Incorrect !");
           }
+          if(response.data.success==false && response.data.errType == 3)
+          {
+            setErrMsg("You are Blocked Now, Please Contact Our team for .... !");
+          }
         })
     }
   })
