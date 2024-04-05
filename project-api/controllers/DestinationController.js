@@ -1,7 +1,7 @@
 const routes = require("express").Router();
 const Destination = require("../models/Destination")
 
-// localhost:8080/api/destination
+// localhost:8080/api/destination/category/Wildlife
 
 routes.get("/category/:x", async(req, res)=>{
     // console.log(req.params.x);
@@ -9,6 +9,16 @@ routes.get("/category/:x", async(req, res)=>{
     let result = await Destination.find({ category : cate });
     res.send(result);
 })
+
+
+// localhost:8080/api/destination   -- ReST API
+/*  
+    let result = await axios.get(localhost:8080/api/destination)
+    let result = await axios.get(localhost:8080/api/destination/101)
+    let result = await axios.post(localhost:8080/api/destination/, obj)
+    let result = await axios.put(localhost:8080/api/destination/101, obj)
+    let result = await axios.delete(localhost:8080/api/destination/101)
+*/
 
 
 
@@ -42,3 +52,9 @@ routes.delete("/:id", async(req, res)=>{
 
 
 module.exports = routes;
+
+/*
+    flipkart.com/api/product        this is a Api (.get)
+
+
+*/
