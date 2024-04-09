@@ -6,4 +6,9 @@ routes.post("/", async(req, res)=>{
     res.send({ success : true });
 })
 
+routes.post("/upload", async(req, res)=>{
+    console.log(req.body);
+    console.log(req.files);
+})
+
 module.exports = routes;

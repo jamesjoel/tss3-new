@@ -1,0 +1,44 @@
+<html>
+    <heaD>
+        <style>
+            .img{
+                
+                
+                width: 6000px;
+                position: absolute;
+                /* width: 1200px; */
+                /* height: 600px; */
+            }
+        </style>
+        
+    </heaD>
+    <body>
+        <img src="1.jpg" id="img" class="img"/>
+
+        <script>
+            // console.log(window.screen.height)
+            if(window.screen.width < 1000)
+            {
+                console.log(window.screen.width, "---")
+                // document.getElementById("img").style.top = "-200px";
+                document.getElementById("img").style.right = (window.screen.width-2200)+"px";
+            }
+            // if(window.screen.width < 400)
+            // {
+            //     console.log("400 less")
+            //     document.getElementById("img").style.width = "6000px"
+            //     // document.getElementById("img").style.top = "-200px"
+            //     document.getElementById("img").style.right = "-1400px"
+            //     document.getElementById("img").style.position = "absolute"
+            // }
+            // else if(window.screen.width > 400 && window.screen.width < 800){
+            //     console.log("800 less")
+            //     document.getElementById("img").style.width = "6000px"
+            //     // document.getElementById("img").style.top = "-200px"
+            //     document.getElementById("img").style.right = "-1800px"
+            //     document.getElementById("img").style.position = "absolute"
+            // }
+
+        </script>
+    </body>
+</html>

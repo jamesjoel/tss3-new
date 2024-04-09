@@ -26,5 +26,10 @@ routes.post("/forgot", async(req, res)=>{
         res.send({ success : false });
     }
 })
+// localhost:8080/api/signup/changepassword
+routes.post("/changepassword", async(req, res)=>{
+    await User.updateMany({ otp : req.body.otp }, { password : sha1(req.body.password) });
+    res.send({success : true});
+})
 
 module.exports = routes;
