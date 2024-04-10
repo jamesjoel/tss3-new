@@ -16,7 +16,7 @@ const Dashboard = () => {
       let myform = new FormData();
       myform.append("name1", formdata.name);
       myform.append("image1", x.current.files[0]);
-      myform.append("image2", "vijay");
+      
       await axios.post(`${API_URL}/demo/upload`, myform);
     }
   })

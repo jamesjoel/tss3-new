@@ -1,5 +1,6 @@
 const routes = require("express").Router();
 const Destination = require("../models/Destination")
+const path = require("path");
 
 // localhost:8080/api/destination/category/Wildlife
 
@@ -32,10 +33,29 @@ routes.get("/:id", async(req, res)=>{
     let result = await Destination.find({_id : req.params.id});
     res.send(result[0]);
 })
+
+
 routes.post("/", async(req, res)=>{
-    await Destination.create(req.body)
-    res.send({success : true});
+    // console.log(req.body);
+    // console.log(req.files);
+    let file = req.files.image;
+    let upload_path = path.resolve()+"/assets/destination-images/"+file.name;
+    file.mv(upload_path, async(err)=>{
+        if(err){
+            console.log(err);
+            return;
+        }
+        req.body.image = file.name;
+        await Destination.create(req.body)
+        res.send({success : true});
+    })
+
+    
 })
+
+
+
+
 routes.put("/:id", async(req, res)=>{
     await Destination.updateMany({_id : req.params.id},req.body)
     res.send({success : true});

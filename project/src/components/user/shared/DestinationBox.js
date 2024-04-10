@@ -4,7 +4,7 @@ const DestinationBox = (props) => {
     return (
         <div className="col-md-4 ">
             <div className="project-wrap">
-                <a href="#" className="img" style={{ backgroundImage: "url(/assets/images/destination-1.jpg)" }}></a>
+                <a href="#" className="img" style={{ backgroundImage: `url(http://localhost:8080/destination-images/${props.value.image})` }}></a>
                 <div className="text p-4">
 
 
