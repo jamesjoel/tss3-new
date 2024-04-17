@@ -25,7 +25,7 @@ const Dashboard = () => {
     <>
       <div className='container my-4'>
         Dashboard
-        <form onSubmit={form.handleSubmit}>
+        {/* <form onSubmit={form.handleSubmit}>
           <div className='row'>
             <div className='col-md-6 offset-md-3'>
 
@@ -38,7 +38,7 @@ const Dashboard = () => {
               <button className='btn btn-primary' type='submit'>Upload</button>
             </div>
           </div>
-        </form>
+        </form> */}
       </div>
     </>
   )
