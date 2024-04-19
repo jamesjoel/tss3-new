@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {API_URL} from '../../../util/API_URL'
+import { NavLink } from 'react-router-dom'
 import axios from 'axios'
 
 const MyProfile = () => {
@@ -51,8 +52,8 @@ const MyProfile = () => {
 
                   </tbody>
                 </table>
-                <button className='btn btn-info'>Update Profile</button>
-                <button className='btn btn-info'>Change Password</button>
+                <NavLink to="/user/update-profile" className='btn btn-info'>Update Profile</NavLink>
+                <NavLink to="/user/change-password" className='btn btn-info'>Change Password</NavLink>
             </div>
         </div>
     </div>
@@ -60,3 +61,4 @@ const MyProfile = () => {
 }
 
 export default MyProfile
+// Abc@258

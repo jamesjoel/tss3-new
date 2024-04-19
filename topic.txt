@@ -4,7 +4,7 @@
 4. oops
 5. this
 6. weak map
-7. json (parse/string)
+7. json (parse/string)  ************
 8. object method
 9. hooks
 

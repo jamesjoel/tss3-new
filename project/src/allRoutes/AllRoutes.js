@@ -21,6 +21,7 @@ import DestinationList from '../components/admin/feature/DestinationList'
 import Hotels from '../components/admin/feature/Hotels'
 import HotelsList from '../components/admin/feature/HotelsList'
 import ForgotPassword from '../components/user/feature/ForgotPassword'
+import ChangePass from '../components/user/feature/ChangePass'
 
 const AllRoutes = () => {
   return (
@@ -38,6 +39,7 @@ const AllRoutes = () => {
                   <Route path='user' element={<UserProtactedModule />}>
                       <Route path='my-booking' element={<MyBooking />} />
                       <Route path='my-profile' element={<MyProfile />} />
+                      <Route path='change-password' element={<ChangePass />} />
                       <Route path='logout' element={<Logout />} />
                   </Route>
 
