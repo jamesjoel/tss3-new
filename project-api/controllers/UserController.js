@@ -39,4 +39,26 @@ routes.post("/update_pass", async(req, res)=>{
     }
 })
 
+routes.get("/update-profile", async(req, res)=>{
+    let token = req.headers.authorization;
+    let info = jwt.decode(token, "the stepping stone");
+    let result = await User.find({ _id : info.id });
+    res.send(result[0]);
+})
+routes.post("/update-profile", async(req, res)=>{
+    // console.log(req.headers);
+    let token = req.headers.authorization;
+    let info = jwt.decode(token, "the stepping stone");
+    let obj = { name : req.body.name,
+    
+    contact : req.body.contact,
+    gender : req.body.gender,
+    state : req.body.state,
+    city : req.body.city,
+    address : req.body.address }
+
+    await User.updateMany({ _id : info.id }, obj);
+    res.send({success : true});
+})
+
 module.exports = routes;
