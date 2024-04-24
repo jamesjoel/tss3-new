@@ -19,18 +19,31 @@ const Destination = () => {
     initialValues : desti,
     onSubmit : async (formdata)=>{
      if(params.id){
+      // form update code here
         let file = image.current.files[0];
         if(file){
+          let file = image.current.files[0];
+      // console.log(file);return;
           let myform = new FormData();
           myform.append("image", file);
           myform.append("title", formdata.title);
           myform.append("detail", formdata.detail);
           myform.append("category", formdata.category);
-          
+
+          let response = await axios.put(`${API_URL}/destination/${params.id}`, myform);
+          navigate("/admin/destination/list");
         }else{
-          console.log("file not selected")
+
+          let response = await axios.put(`${API_URL}/destination/${params.id}`, formdata);
+          navigate("/admin/destination/list");
+
 
         }
+
+
+
+
+
      }else{
       let file = image.current.files[0];
       // console.log(file);return;
@@ -42,7 +55,8 @@ const Destination = () => {
 
       let response = await axios.post(`${API_URL}/destination`, myform);
       navigate("/admin/destination/list");
-     }
+     }    
+    
     }
   })
 
@@ -108,3 +122,8 @@ const Destination = () => {
 }
 
 export default Destination
+
+/*
+
+
+*/

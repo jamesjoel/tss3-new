@@ -2,6 +2,7 @@ import React, {useRef} from 'react'
 import {useFormik} from 'formik'
 import {API_URL} from '../../../util/API_URL'
 import axios from 'axios'
+import Box2 from '../shared/Box2'
 
 const Dashboard = () => {
   let x = useRef();
@@ -25,20 +26,7 @@ const Dashboard = () => {
     <>
       <div className='container my-4'>
         Dashboard
-        {/* <form onSubmit={form.handleSubmit}>
-          <div className='row'>
-            <div className='col-md-6 offset-md-3'>
-
-              <label>Name</label>
-              <input type='text' name='name' onChange={form.handleChange} className='form-control' />
-              <br />
-              <label>Select Image</label>
-              <input ref={x} type='file' name='image' onChange={form.handleChange} className='form-control' />
-              <br />
-              <button className='btn btn-primary' type='submit'>Upload</button>
-            </div>
-          </div>
-        </form> */}
+       <Box2 name={'rohit'} age = {25} >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore possimus, debitis nisi sit libero eligendi est id eos molestias culpa earum ut omnis, iste, illum similique deserunt reprehenderit. Non, accusamus.</Box2>
       </div>
     </>
   )

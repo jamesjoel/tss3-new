@@ -66,9 +66,31 @@ routes.post("/", async(req, res)=>{
 
 
 routes.put("/:id", async(req, res)=>{
-    await Destination.updateMany({_id : req.params.id},req.body)
-    res.send({success : true});
-})
+    // console.log(req.body); return;
+    if(req.files){
+        let unique_name = UniqueString(); // ODgyXzE2Nzk1MDQyMDcxNDZfNDkx 
+    
+        let file = req.files.image; // 1.jpg
+        let arr = file.name.split(".");
+        let ext = arr[arr.length-1];
+
+        let new_name = unique_name+"."+ext;
+        let upload_path = path.resolve()+"/assets/destination-images/"+new_name;
+        file.mv(upload_path, async(err)=>{
+        if(err){
+            console.log(err);
+            return;
+        }
+        req.body.image = new_name;
+        await Destination.updateMany({_id : req.params.id},req.body)
+        res.send({success : true});
+    })
+    }else{
+
+        await Destination.updateMany({_id : req.params.id},req.body)
+        res.send({success : true});
+    }
+    })
 routes.delete("/:id", async(req, res)=>{
     await Destination.deleteMany({_id : req.params.id})
     res.send({success : true});
