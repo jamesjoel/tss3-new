@@ -57,6 +57,7 @@ const AllRoutes = () => {
                   <Route path='destination/edit/:id' element={<AdminDestination />} />
                   <Route path='hotels' element={<Hotels />} />
                   <Route path='hotels/list' element={<HotelsList />} />
+                  <Route path='hotels/edit/:id' element={<Hotels />} />
                   <Route path='destination/list' element={<DestinationList />} />
                   <Route path='logout' element={<AdminLogout />} />
                 </Route>

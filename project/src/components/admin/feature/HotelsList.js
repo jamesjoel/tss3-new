@@ -1,8 +1,10 @@
 import React, {useState, useEffect, useRef} from 'react'
 import {API_URL} from '../../../util/API_URL'
 import axios from 'axios'
+import {useNavigate} from 'react-router-dom'
 const HotelsList = () => {
     let btn = useRef();
+    let navigate = useNavigate();
     let [hotels, setHotels] = useState([]);
 
     let [hotel, setHotel] = useState({});
@@ -42,6 +44,9 @@ const HotelsList = () => {
                     return hotels.filter(value=> value._id != hotel._id);
         })
     }
+    let askEdit = (obj)=>{
+        navigate("/admin/hotels/edit/"+obj._id)
+    }
 
   return (
     <>
@@ -56,6 +61,7 @@ const HotelsList = () => {
                             <th>Name</th>
                             <th>Contact</th>
                             <th>City</th>
+                            <th>Edit</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
@@ -68,6 +74,7 @@ const HotelsList = () => {
                                         <td>{value.name}</td>
                                         <td>{value.contact}</td>
                                         <td>{value.city}</td>
+                                        <td><button onClick={()=>askEdit(value)} className='btn btn-info btn-sm'>Edit</button></td>
                                         <td><button onClick={()=>askDelete(value)} data-toggle="modal" data-target="#delModal" className='btn btn-danger btn-sm'>Delete</button></td>
                                     </tr>
                                 )
