@@ -22,6 +22,7 @@ import Hotels from '../components/admin/feature/Hotels'
 import HotelsList from '../components/admin/feature/HotelsList'
 import ForgotPassword from '../components/user/feature/ForgotPassword'
 import ChangePass from '../components/user/feature/ChangePass'
+import AdminSlider from '../components/admin/feature/Slider'
 import UpdateProfile from '../components/user/feature/UpdateProfile'
 
 const AllRoutes = () => {
@@ -57,6 +58,7 @@ const AllRoutes = () => {
                   <Route path='destination/edit/:id' element={<AdminDestination />} />
                   <Route path='hotels' element={<Hotels />} />
                   <Route path='hotels/list' element={<HotelsList />} />
+                  <Route path='slider' element={<AdminSlider />} />
                   <Route path='hotels/edit/:id' element={<Hotels />} />
                   <Route path='destination/list' element={<DestinationList />} />
                   <Route path='logout' element={<AdminLogout />} />
