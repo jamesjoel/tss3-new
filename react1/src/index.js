@@ -1,16 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Box from './Box';
-import Box2 from './Box2';
-import Box3 from './Box3';
+
 import App from './App';
+import {BrowserRouter} from 'react-router-dom'
+import {Provider} from 'react-redux';
+import { configureStore } from '@reduxjs/toolkit';
+import NumSlice from './redux/NumSlice';
+
+let store = configureStore({
+  reducer : NumSlice
+});
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
     <>
-      <App />
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
     </>
   
 );

@@ -1,7 +1,9 @@
 import React, {useState, useRef, useEffect} from 'react'
 import { NavLink } from 'react-router-dom'
+import { useSelector } from 'react-redux';
 
 const Header = () => {
+	let city = useSelector(x=>x);
 	let menubar = useRef();
 	let menuBarHandler = ()=>{
 		menubar.current.classList.remove("show");
@@ -70,6 +72,7 @@ const Header = () => {
 	          <li className="nav-item cta"><a href="#" className="nav-link">Book Now</a></li>
 
 	        </ul>
+			  {city}
 	      </div>
 	    </div>
 	  </nav>

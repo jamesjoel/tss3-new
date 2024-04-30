@@ -5,9 +5,12 @@ import { useFormik } from 'formik'
 import LoginSchema from '../../../schemas/LoginSchema'
 import axios from 'axios'
 import {API_URL} from '../../../util/API_URL'
+import { useSelector } from 'react-redux'
 
 
 const Login = () => {
+
+  let city = useSelector(x=>x);
 
   let navigate = useNavigate();
 
@@ -47,6 +50,7 @@ const Login = () => {
     <Slider />
     <div className="container" style={{marginTop : "100px", minHeight : "600px"}}>
         <div className="row">
+          <h1>{city}</h1>
             <div className='col-md-6 offset-md-3'>
               <form onSubmit={loginForm.handleSubmit}>
               <div className='card'>
