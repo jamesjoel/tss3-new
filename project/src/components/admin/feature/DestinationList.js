@@ -46,19 +46,6 @@ const DestinationList = () => {
     <div className="container my-4">
         <div className="row">
             <div className="col-md-12">
-
-            {/* <button onClick={demo}>close</button>
-
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-                <button ref={x} type="button" class="close" data-dismiss="alert">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div> */}
-
-
-
-
                 <h3>Add New Destination</h3>
     
                 <table className="table table-dark">

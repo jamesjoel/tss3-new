@@ -5,28 +5,34 @@ import axios from 'axios'
 import { API_URL } from '../../../util/API_URL'
 import DestinationBox from '../shared/DestinationBox'
 import HotelBox from '../shared/HotelBox'
+import ProductBox from '../shared/ProductBox'
 
 
 const Home = () => {
 
 	let [allDestination, setAllDestination] = useState([]);
 	let [allHotels, setAllHotels] = useState([]);
+	let [allPro, setAllPro] = useState([]);
 	useEffect(() => {
 		getAllData();
 	}, [])
 
 	let getAllData = async()=>{
-		// axios.get(`${API_URL}/destination`).then(response => {
-		// 	setAllDestination(response.data);
-		// })
-		// axios.get(`${API_URL}/hotels`).then(response => {
-		// 	setAllHotels(response.data);
-		// })
+		
 		let response1 = await axios.get(`${API_URL}/destination`)
 		setAllDestination(response1.data);
 
 		let response2 = await axios.get(`${API_URL}/hotels`);
 		setAllHotels(response2.data);
+	}
+
+	useEffect(()=>{
+		getAllPro();
+	},[])
+
+	let getAllPro = async()=>{
+		let response = await axios.get(`${API_URL}/product`);
+		setAllPro(response.data);
 	}
 
 
@@ -72,7 +78,22 @@ const Home = () => {
 					</div>
 				</div>
 			</section>
-			<RecentPost />
+			<section className="ftco-section">
+				<div className="container">
+					<div className="row justify-content-center pb-4">
+						<div className="col-md-12 heading-section text-center ">
+							<h2 className="mb-4">Recent Product</h2>
+						</div>
+					</div>
+					<div className="row">
+					{
+						allPro.map(item=><ProductBox key={item._id} info={item} />)
+					}	
+						
+						
+					</div>
+				</div>
+			</section>
 		</>
 	)
 }

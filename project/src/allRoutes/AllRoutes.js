@@ -24,6 +24,9 @@ import ForgotPassword from '../components/user/feature/ForgotPassword'
 import ChangePass from '../components/user/feature/ChangePass'
 import AdminSlider from '../components/admin/feature/Slider'
 import UpdateProfile from '../components/user/feature/UpdateProfile'
+import Product from '../components/admin/feature/Product'
+import ProductList from '../components/admin/feature/ProductList'
+import ProductDetail from '../components/user/feature/ProductDetail'
 
 const AllRoutes = () => {
   return (
@@ -32,6 +35,7 @@ const AllRoutes = () => {
                 <Route path='' element={<UserModule />}>
                   <Route path='' element={<Home />} />
                   <Route path='about' element={<About />} />
+                  <Route path='detail/:id' element={<ProductDetail />} />
                   <Route path='forgot-password' element={<ForgotPassword />} />
                   <Route path='destination/:x' element={<Destination />} />
                   <Route path='login' element={<Login />} />
@@ -54,13 +58,20 @@ const AllRoutes = () => {
                   <Route path='dashboard' element={<Dashboard />} />
                   <Route path='users' element={<Users />} />
                   <Route path='booking' element={<Booking />} />
+
                   <Route path='destination' element={<AdminDestination />} />
                   <Route path='destination/edit/:id' element={<AdminDestination />} />
+                  <Route path='destination/list' element={<DestinationList />} />
+                  
+                  <Route path='product' element={<Product />} />
+                  <Route path='product/edit/:id' element={<Product />} />
+                  <Route path='product/list' element={<ProductList />} />
+
                   <Route path='hotels' element={<Hotels />} />
                   <Route path='hotels/list' element={<HotelsList />} />
                   <Route path='slider' element={<AdminSlider />} />
                   <Route path='hotels/edit/:id' element={<Hotels />} />
-                  <Route path='destination/list' element={<DestinationList />} />
+                  
                   <Route path='logout' element={<AdminLogout />} />
                 </Route>
             </Routes>

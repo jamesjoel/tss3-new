@@ -11,6 +11,8 @@ import Event2 from '../components/pages/Event2'
 import Event3 from '../components/pages/Event3'
 import Event4 from '../components/pages/Event4'
 import API from '../components/pages/API'
+import User1 from '../components/pages/User1'
+import User2 from '../components/pages/User2'
 
 const AllRoutes = () => {
   return (
@@ -25,6 +27,8 @@ const AllRoutes = () => {
                     <Route path="event2" element={<Event2 />} />
                     <Route path="event3" element={<Event3 />} />
                     <Route path="event4" element={<Event4 />} />
+                    <Route path="user1" element={<User1 />} />
+                    <Route path="user2" element={<User2 />} />
                     <Route path="api" element={<API />} />
 
                 </Routes>

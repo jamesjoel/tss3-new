@@ -14,6 +14,12 @@ let Header = ()=>{
                             <NavLink to="/" className="nav-link">Home</NavLink>
                         </li>
                         <li className="nav-item">
+                            <NavLink to="/user1" className="nav-link">User1</NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink to="/user2" className="nav-link">User2</NavLink>
+                        </li>
+                        {/* <li className="nav-item">
                             <NavLink to="/about" className="nav-link">About</NavLink>
                         </li>
                         <li className="nav-item">
@@ -42,7 +48,7 @@ let Header = ()=>{
                         </li>
                         <li className="nav-item">
                             <NavLink to="/api" className="nav-link">API</NavLink>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
             </div>

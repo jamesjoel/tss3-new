@@ -69,7 +69,7 @@ const Header = () => {
 			  
 	          
 	          
-	          <li className="nav-item cta"><a href="#" className="nav-link">Book Now</a></li>
+	          <li className="nav-item cta"><a href="#" className="nav-link">My Cart (0)</a></li>
 
 	        </ul>
 			  {city}
