@@ -27,6 +27,7 @@ import UpdateProfile from '../components/user/feature/UpdateProfile'
 import Product from '../components/admin/feature/Product'
 import ProductList from '../components/admin/feature/ProductList'
 import ProductDetail from '../components/user/feature/ProductDetail'
+import MyCart from '../components/user/feature/MyCart'
 
 const AllRoutes = () => {
   return (
@@ -40,6 +41,7 @@ const AllRoutes = () => {
                   <Route path='destination/:x' element={<Destination />} />
                   <Route path='login' element={<Login />} />
                   <Route path='signup' element={<Signup />} />
+                  <Route path='mycart' element={<MyCart />} />
                   
                   
                   <Route path='user' element={<UserProtactedModule />}>

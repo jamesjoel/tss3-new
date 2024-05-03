@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 
 const Header = () => {
-	let city = useSelector(x=>x);
+	let cartdata = useSelector(state=>state);
 	let menubar = useRef();
 	let menuBarHandler = ()=>{
 		menubar.current.classList.remove("show");
@@ -69,10 +69,10 @@ const Header = () => {
 			  
 	          
 	          
-	          <li className="nav-item cta"><a href="#" className="nav-link">My Cart (0)</a></li>
+	          <li className="nav-item cta"><NavLink to="/mycart" className="nav-link">My Cart ({cartdata.length})</NavLink></li>
 
 	        </ul>
-			  {city}
+			  
 	      </div>
 	    </div>
 	  </nav>
