@@ -4,9 +4,11 @@ import AdminLoginSchema from '../../../schemas/AdminLoginSchema'
 import axios from 'axios'
 import {API_URL} from '../../../util/API_URL'
 import {useNavigate} from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { doLogin } from '../../../redux/AdminAuthSlice'
 
 const Login = () => {
-    
+    let dispatch = useDispatch();
     let navigate = useNavigate();
     useEffect(()=>{
         if(localStorage.getItem("admin-token"))
@@ -23,6 +25,7 @@ const Login = () => {
             axios.post(`${API_URL}/adminauth`, formdata).then(response=>{
                 if(response.data.success == true)
                 {
+                    dispatch(doLogin());
                     localStorage.setItem("admin-token", response.data.token);
                     navigate("/admin/dashboard");
                 }

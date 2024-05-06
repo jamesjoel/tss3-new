@@ -5,7 +5,7 @@ import { API_PATH } from '../../../util/API_URL'
 
 const MyCart = () => {
     let dispatch = useDispatch();
-    let cartData = useSelector(state => state);
+    let cartData = useSelector(state => state.CartSlice);
     // let [total, setTotal] = useState(0);
     let num = 0;
     cartData.forEach((item)=>{

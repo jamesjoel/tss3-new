@@ -1,28 +1,36 @@
 import React, {useState, useRef, useEffect} from 'react'
 import { NavLink } from 'react-router-dom'
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { doLogin } from '../../../redux/UserAuthSlice'
 
 const Header = () => {
-	let cartdata = useSelector(state=>state);
+	let cartdata = useSelector(state=>state.CartSlice);
+	let userLogin = useSelector(state=>state.UserAuthSlice);
 	let menubar = useRef();
 	let menuBarHandler = ()=>{
 		menubar.current.classList.remove("show");
 	}
+	let dispatch = useDispatch();
+	useEffect(()=>{
+		if(localStorage.getItem("access-token")){
+			dispatch(doLogin());
+		}
+	},[])
 
 	let time = new Date();
 	let [x, setX] = useState(time.toLocaleTimeString());
 
 	
 
-	let demo = ()=>{
-		let time = new Date();
-		setX(time.toLocaleTimeString())
-		setTimeout(demo, 1000);
-	}
+	// let demo = ()=>{
+	// 	let time = new Date();
+	// 	setX(time.toLocaleTimeString())
+	// 	setTimeout(demo, 1000);
+	// }
 
-	useEffect(()=>{
-		demo();
-	},[])
+	// useEffect(()=>{
+	// 	demo();
+	// },[])
   return (
 	<>
 	
@@ -51,7 +59,7 @@ const Header = () => {
 				</div>
 			  </li>
 	          {
-				localStorage.getItem("access-token") 
+				userLogin
 				?
 				<>
 					<li className="nav-item"><NavLink onClick={menuBarHandler} to="/user/my-booking" className="nav-link">My-Booking</NavLink></li>

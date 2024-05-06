@@ -5,13 +5,14 @@ import { useFormik } from 'formik'
 import LoginSchema from '../../../schemas/LoginSchema'
 import axios from 'axios'
 import {API_URL} from '../../../util/API_URL'
-import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { doLogin } from '../../../redux/UserAuthSlice'
 
 
 const Login = () => {
 
-  let city = useSelector(x=>x);
-
+  let dispatch = useDispatch();
+  
   let navigate = useNavigate();
 
   let [errMsg, setErrMsg] = useState("");
@@ -25,6 +26,7 @@ const Login = () => {
           if(response.data.success==true)
           {
             // localStorage.setItem(key, value)
+            dispatch(doLogin());
             localStorage.setItem("access-token", response.data.token);
             navigate("/user/my-booking");
 
@@ -47,10 +49,10 @@ const Login = () => {
 
   return (
     <>
-    <Slider />
+    {/* <Slider /> */}
     <div className="container" style={{marginTop : "100px", minHeight : "600px"}}>
         <div className="row">
-          <h1>{city}</h1>
+          
             <div className='col-md-6 offset-md-3'>
               <form onSubmit={loginForm.handleSubmit}>
               <div className='card'>

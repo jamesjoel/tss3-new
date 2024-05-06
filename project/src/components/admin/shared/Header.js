@@ -1,7 +1,18 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { NavLink } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import { doLogin } from '../../../redux/AdminAuthSlice'
 
 const Header = () => {
+  let dispatch = useDispatch();
+  let adminLogin = useSelector(state=>state.AdminAuthSlice);
+  
+  useEffect(()=>{
+    if(localStorage.getItem("admin-token")){
+      dispatch(doLogin());
+    }
+  },[])
+
   return (
     <>
     <nav className='navbar navbar-expand-sm navbar-dark bg-info'>
@@ -12,7 +23,7 @@ const Header = () => {
         </button>
         <div id='menu' className='collapse navbar-collapse'>
           {
-            localStorage.getItem("admin-token")
+            adminLogin
             ?
             <ul className='nav navbar-nav'>
             <li className='nav-item'>
