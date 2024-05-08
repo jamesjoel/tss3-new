@@ -11,9 +11,7 @@ const Student = () => {
   let [stu, setStu] = useState({});
   let closeBtn = useRef();
 
-  useEffect(()=>{
-    getData();
-  },[])
+  
 
   let getData = async()=>{
     let result = await axios.get(`${API_URL}`);
@@ -40,7 +38,7 @@ const Student = () => {
 
     
 
-    let response = await axios.post(`${API_URL}`, arr);
+    let response = await axios.post(`${API_URL}`);
     console.log(response.data);
   }
   return (

@@ -13,6 +13,20 @@
       "fee": "10000",
       "gender": "male",
       "address": "palaysia"
+    },
+    {
+      "id": "b0c9",
+      "name": "Gaurav",
+      "fee": "5700",
+      "gender": "male",
+      "address": "sdfg sdfg sdfg"
+    },
+    {
+      "id": "045f",
+      "name": "Vijay",
+      "fee": "8000",
+      "gender": "male",
+      "address": "sdfg sdfg sdfg"
     }
   ]
 }
