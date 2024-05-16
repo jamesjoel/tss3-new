@@ -9,7 +9,7 @@ let store = configureStore({
   reducer : ChatSlice
 })
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.hydrateRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
 

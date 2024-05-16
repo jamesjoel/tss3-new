@@ -1,6 +1,6 @@
-1. class based component
-2. session
-3. promise
+1. class based component************
+2. session              ************
+3. promise              ************
 4. oops
 5. this
 6. weak map
