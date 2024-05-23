@@ -1,5 +1,26 @@
 const express = require("express")
 const app = express();
+const fs = require("fs");
+
+app.get("/file", (req, res)=>{
+
+    let myfile = fs.createWriteStream("demo.xls")
+
+    var header="Sl No"+"\t"+" Age"+"\t"+"Name"+"\n";
+    myfile.write(header)
+
+
+    var row1 = "0"+"\t"+" 21"+"\t"+"Rob"+"\n";
+    
+    myfile.write(row1)
+    
+
+
+    myfile.close();
+    res.send("success");
+})
+
+
 
 app.get("/", (req, res)=>{
     res.sendFile(__dirname+"/index.html");

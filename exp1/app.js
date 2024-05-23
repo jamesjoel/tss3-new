@@ -1,20 +1,12 @@
 const express = require("express");
 const app = express();
 
-// Routes handle
-app.get("/about", (a, b)=>{
-    b.sendFile(__dirname+"/about.html");
-});
+app.use(express.urlencoded({ extended : true}));
+app.use(express.json());
 
-app.get("/", (d, c)=>{
-    c.sendFile(__dirname+"/home.html")
+app.post("/", (req, res)=>{
+    console.log(req.body);
 })
-
-app.get("/contact", (x, y)=>{
-    y.sendFile(__dirname+"/contact.html")
-})
-
-
 
 
 app.listen(3000);

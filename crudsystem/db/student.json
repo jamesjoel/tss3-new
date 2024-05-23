@@ -1,13 +1,6 @@
 {
   "student": [
     {
-      "id": "1d60",
-      "name": "Rohit",
-      "fee": "5700",
-      "gender": "male",
-      "address": "sdfg sdgs "
-    },
-    {
       "id": "c1a0",
       "name": "Ajay",
       "fee": "10000",
@@ -22,11 +15,18 @@
       "address": "sdfg sdfg sdfg"
     },
     {
-      "id": "045f",
-      "name": "Vijay",
-      "fee": "8000",
+      "name": "nidhi",
+      "fee": "8888",
+      "gender": "female",
+      "address": "demo demo",
+      "id": "045f"
+    },
+    {
+      "id": "28f8",
+      "name": "vivke",
+      "fee": 1500,
       "gender": "male",
-      "address": "sdfg sdfg sdfg"
+      "address": "abc"
     }
   ]
 }
